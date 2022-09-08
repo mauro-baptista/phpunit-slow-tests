@@ -1,5 +1,12 @@
 <?php
 
-it('can test', function () {
-    expect(true)->toBeTrue();
-});
+namespace MauroBaptista\SlowTests\Tests;
+
+class ExampleTest extends TestCase
+{
+    /** @test */
+    public function sample()
+    {
+        $this->assertTrue(true);
+    }
+}

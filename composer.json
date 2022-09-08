@@ -1,16 +1,16 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "maurobaptista/phpunit-slow-tests",
+    "description": "Get a better overview of the slowests tests in your suite",
     "keywords": [
-        ":vendor_name",
-        ":package_slug"
+        "maurobaptista",
+        "phpunit-slow-tests"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/maurobaptista/phpunit-slow-tests",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Mauro Baptista",
+            "email": "mauro@carnou.com",
             "role": "Developer"
         }
     ],
@@ -19,22 +19,22 @@
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.0",
-        "pestphp/pest": "^1.20",
-        "spatie/ray": "^1.28"
+        "nunomaduro/termwind": "^1.14",
+        "phpunit/phpunit": "^9.5"
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src"
+            "MauroBaptista\\SlowTests\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "MauroBaptista\\SlowTests\\Tests\\": "tests"
         }
     },
     "scripts": {
-        "test": "vendor/bin/pest",
-        "test-coverage": "vendor/bin/pest --coverage",
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage",
         "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes"
     },
     "config": {
