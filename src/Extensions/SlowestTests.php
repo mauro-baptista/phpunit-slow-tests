@@ -8,10 +8,12 @@ use PHPUnit\Runner\BeforeFirstTestHook;
 
 class SlowestTests implements BeforeFirstTestHook, AfterTestHook, AfterLastTestHook
 {
-    /** @var array<string, float> array<$test, $time>  */
+    /** @var array<string, float> array<$test,> */
     private array $tests = [];
 
-    public function __construct(public int $show = 10) {}
+    public function __construct(public int $show = 10)
+    {
+    }
 
     public function executeBeforeFirstTest(): void
     {
@@ -29,6 +31,6 @@ class SlowestTests implements BeforeFirstTestHook, AfterTestHook, AfterLastTestH
 
         $slowestTests = array_slice($this->tests, 0, $this->show);
 
-        fwrite(STDERR, print_r($slowestTests, TRUE));
+        fwrite(STDERR, print_r($slowestTests, true));
     }
 }

@@ -7,7 +7,6 @@ use PHPUnit\Runner\AfterLastTestHook;
 use PHPUnit\Runner\AfterTestHook;
 use PHPUnit\Runner\BeforeFirstTestHook;
 
-
 class ResultToCSV implements BeforeFirstTestHook, AfterTestHook, AfterLastTestHook
 {
     private $handle;
@@ -35,7 +34,7 @@ class ResultToCSV implements BeforeFirstTestHook, AfterTestHook, AfterLastTestHo
 
         $this->handle = fopen($this->getFile(), "a");
 
-        if (!is_resource($this->handle)) {
+        if (! is_resource($this->handle)) {
             $this->components->error("Couldn't open file <i>$file</i>", [
                 'You added the report inside a folder that do not exist',
                 'You have no permission to create/write the file',

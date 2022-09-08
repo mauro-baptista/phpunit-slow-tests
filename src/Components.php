@@ -2,7 +2,6 @@
 
 namespace MauroBaptista\SlowTests;
 
-use Closure;
 use function Termwind\render;
 
 class Components
