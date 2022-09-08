@@ -43,8 +43,6 @@ class ResultToCSV implements BeforeFirstTestHook, AfterTestHook, AfterLastTestHo
             return;
         }
 
-        $this->components->error($file);
-
         fputcsv($this->handle, ['datetime', 'class', 'method', 'duration']);
     }
 
@@ -58,5 +56,10 @@ class ResultToCSV implements BeforeFirstTestHook, AfterTestHook, AfterLastTestHo
     public function executeAfterLastTest(): void
     {
         is_resource($this->handle) && fclose($this->handle);
+
+        $this->components->newLine(2);
+        $this->components->success('[ResultToCSV] Report Generated');
+        $this->components->info('File saved at: ' . $this->getFile());
+        $this->components->newLine(1);
     }
 }
