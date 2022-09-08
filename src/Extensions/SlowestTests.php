@@ -23,8 +23,7 @@ class SlowestTests implements BeforeFirstTestHook, AfterTestHook, AfterLastTestH
     public function __construct(public int $show = 10, public array $threshold = [
         'success' => 0.1,
         'warning' => 1,
-    ])
-    {
+    ]) {
         $this->components = new Components();
     }
 
