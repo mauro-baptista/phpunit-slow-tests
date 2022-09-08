@@ -10,6 +10,7 @@ use PHPUnit\Runner\BeforeFirstTestHook;
 class ResultToCSV implements BeforeFirstTestHook, AfterTestHook, AfterLastTestHook
 {
     private $handle;
+
     private Components $components;
 
     public function __construct(public string $file = 'result.csv')
