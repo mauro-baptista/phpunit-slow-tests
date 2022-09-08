@@ -84,7 +84,7 @@ class Components
 
         foreach ($data as $row) {
             $message .= '<tr>' . array_reduce(
-                    $row,
+                $row,
                 fn (?string $carry, string $column) => $carry . "<td>$column</td>"
             ) . '<tr>';
         }
