@@ -16,7 +16,17 @@ composer require maurobaptista/phpunit-slow-tests
 
 ## Usage
 
-TBD
+In your `phpunit.xml` file, add the extensions as below.
+```xml
+  <extensions>
+    <extension class="MauroBaptista\SlowTests\Extensions\ResultToCSV">
+      <arguments>
+        <string>tests/report/result.csv</string>
+      </arguments>
+    </extension>
+    <extension class="MauroBaptista\SlowTests\Extensions\SlowestTests" />
+  </extensions>
+```
 
 ## Testing
 
