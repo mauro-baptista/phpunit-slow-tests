@@ -3,11 +3,13 @@
 namespace MauroBaptista\SlowTests;
 
 use function Termwind\render;
+use function Termwind\renderUsing;
 
 class Components
 {
     private function block(string $message): void
     {
+        renderUsing(null);
         render(<<<"HTML"
             <div class="px-2">
                 $message
@@ -27,7 +29,7 @@ class Components
 
     public function separator(): void
     {
-        render('<HR>');
+        $this->block('<HR>');
     }
 
     public function newLine(int $lines = 1): void
