@@ -6,17 +6,13 @@
 
 This is where your description should go. Try and limit it to a paragraph or two. Consider adding a small example.
 
----
-
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require maurobaptista/phpunit-slow-tests
+composer require maurobaptista/phpunit-slow-tests --dev
 ```
-
----
 
 ## Usage
 
@@ -31,8 +27,6 @@ In your `phpunit.xml` file, add the extensions as below.
     <extension class="MauroBaptista\SlowTests\Extensions\SlowestTests" />
   </extensions>
 ```
-
----
 
 ## Configuration
 
@@ -95,7 +89,7 @@ datetime,class,method,duration
 | Argument | Type | Default | Note |
 | --- | --- | --- | --- |
 | show | integer | 10 | Amount of tests that will be shown after the test ran |
-| threshold | array | ['success' => 0.1, 'warning' => 1] | Time to show tests as green, yellow, or red (in seconds)|
+| threshold | array | `['success' => 0.1, 'warning' => 1]` | Time to show tests as green, yellow, or red (in seconds)|
 
 **Output:**
 
@@ -103,21 +97,15 @@ Console:
 
 ![Slowest Tests](https://cdn.maurobaptista.com/packages/phpunit-slow-tests/slowest-tests.png)
 
----
-
 ## Testing
 
 ```bash
 composer test
 ```
 
----
-
 ## Credits
 
 - [Mauro Baptista](https://github.com/maurobaptista)
-
----
 
 ## License
 
